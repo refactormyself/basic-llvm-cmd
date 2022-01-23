@@ -10,7 +10,7 @@ set(LLVM_RUNTIME_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/bin)
 set(LLVM_LIBRARY_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/lib)
 
 # Pass in the local LLVM installation directory (Please build LLVM from source)
-set(LT_LLVM_INSTALL_DIR "" CACHE PATH "LLVM installation directory")
+set(LT_LLVM_INSTALL_DIR "/home/saheed/DEV/comp-arch/compiled/llvm-install" CACHE PATH "LLVM installation directory")
 
 # Tell CMake the location of LLVMConfig.cmake so find_package is not lost :(
 list(APPEND CMAKE_PREFIX_PATH "${LT_LLVM_INSTALL_DIR}/lib/cmake/llvm/")
@@ -31,10 +31,10 @@ if(NOT LLVM_ENABLE_RTTI)
 endif()
 
 add_executable(
-    kal
+    cmd-app-boot
     src/main.cpp
 )
 
 # To avoid undefined reference to `llvm::EnableABIBreakingChecks'
 # ref: https://stackoverflow.com/a/63499379
-target_link_libraries(kal LLVMSupport)
+target_link_libraries(cmd-app-boot LLVMSupport)
