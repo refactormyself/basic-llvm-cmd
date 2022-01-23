@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13.4)
-project(kal-compiler LANGUAGES CXX C)
+project(cmd-app-bootstrap LANGUAGES CXX C)
 
 set(CMAKE_BUILD_WITH_INSTALL_NAME_DIR ON)
 set(CMAKE_CXX_STANDARD 14 CACHE STRING "C++ standard to conform to")
@@ -33,8 +33,15 @@ endif()
 add_executable(
     cmd-app-boot
     src/main.cpp
+        src/common.cpp
+#        tests/common_tests.cpp tests/main.cpp
 )
+
+#add_executable(
+#        cmd_app_test
+#       )
 
 # To avoid undefined reference to `llvm::EnableABIBreakingChecks'
 # ref: https://stackoverflow.com/a/63499379
 target_link_libraries(cmd-app-boot LLVMSupport)
+add_subdirectory(tests)
