@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include "common.hpp"
 
+using namespace cmd;
 
 TEST (HandleArgs /*test suite name*/, NoInputFile /*test name*/) {
     std::string inFileName;

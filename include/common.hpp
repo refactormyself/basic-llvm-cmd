@@ -6,6 +6,8 @@
 #include <fstream>
 
 
-bool HandleArgs(const std::string& inFilename, const std::string& outFilename);
+namespace cmd {
+bool HandleArgs(const std::string &inFilename, const std::string &outFilename);
 
+}
 #endif //KAL_COMPILER_COMMON_HPP

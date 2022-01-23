@@ -6,6 +6,7 @@
 
 using namespace llvm;
 using namespace std;
+using namespace cmd;
 
 
 // -o <filename>
@@ -23,7 +24,7 @@ int main(int argc, char **argv)
 
     cl::ParseCommandLineOptions(argc, argv, " A basic use of LLVM CommandLine \n\n"
                                             "  This program is an example of blah blah blah...\n");
-    bool InteractShellMode = HandleArgs(InputFilename, OutputFilename);
+    bool InteractShellMode = cmd::HandleArgs(InputFilename, OutputFilename);
     return 0;
 }
 
