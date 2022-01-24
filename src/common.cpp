@@ -22,4 +22,16 @@ namespace cmd {
         }
         return replMode;
     }
+
+    FileInfo ReadFile(const string &filePath) {
+        return FileInfo();
+    }
+
+    std::vector<FileInfo> ReadFolder(const string &filePath) {
+        return std::vector<FileInfo>();
+    }
+
+    void CreateReportFile(std::vector<FileInfo>, const string &outFilename) {
+
+    }
 }
