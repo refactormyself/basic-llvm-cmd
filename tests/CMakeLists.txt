@@ -28,6 +28,7 @@ include_directories("../include")
 target_link_libraries(common_tests gtest)
 target_link_libraries(common_tests gtest_main)
 target_link_libraries(common_tests LLVMSupport)
+target_link_libraries(common_tests stdc++fs)
 
 # Your milage may vary with the COMMAND
 add_test(

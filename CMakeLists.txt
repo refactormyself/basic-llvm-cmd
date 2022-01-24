@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.13.4)
 project(cmd-app-bootstrap LANGUAGES CXX C)
 
 set(CMAKE_BUILD_WITH_INSTALL_NAME_DIR ON)
-set(CMAKE_CXX_STANDARD 14 CACHE STRING "C++ standard to conform to")
+#set(CMAKE_CXX_STANDARD 14 CACHE STRING "C++ standard to conform to")
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard to conform to") # I need filesystem
 
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
@@ -10,7 +11,7 @@ set(LLVM_RUNTIME_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/bin)
 set(LLVM_LIBRARY_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/lib)
 
 # Pass in the local LLVM installation directory (Please build LLVM from source)
-set(LT_LLVM_INSTALL_DIR "/home/saheed/DEV/comp-arch/compiled/llvm-install" CACHE PATH "LLVM installation directory")
+set(LT_LLVM_INSTALL_DIR "" CACHE PATH "LLVM installation directory")
 
 # Tell CMake the location of LLVMConfig.cmake so find_package is not lost :(
 list(APPEND CMAKE_PREFIX_PATH "${LT_LLVM_INSTALL_DIR}/lib/cmake/llvm/")
@@ -44,4 +45,8 @@ add_executable(
 # To avoid undefined reference to `llvm::EnableABIBreakingChecks'
 # ref: https://stackoverflow.com/a/63499379
 target_link_libraries(cmd-app-boot LLVMSupport)
+
+target_link_libraries(cmd-app-boot stdc++fs)
+
+enable_testing()
 add_subdirectory(tests)
