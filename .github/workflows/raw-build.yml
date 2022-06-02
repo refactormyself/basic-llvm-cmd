@@ -1,0 +1,19 @@
+name: Raw Build
+on: push
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git ninja-build llvm cmake clang build-essential
+        shell: bash
+      - name: Check out repository code
+        uses: actions/checkout@v3
+#          - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Run the build_run.sh script
+        run: |
+          ls -l
+          ./build_run.sh "/usr/"
+        shell: bash
