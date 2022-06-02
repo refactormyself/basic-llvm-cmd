@@ -1,4 +1,6 @@
-[![Build Status](https://app.travis-ci.com/refactormyself/basic-llvm-cmd.svg?branch=main)](https://app.travis-ci.com/refactormyself/basic-llvm-cmd)
+[![Raw Build](https://github.com/refactormyself/basic-llvm-cmd/actions/workflows/raw-build.yml/badge.svg)](https://github.com/refactormyself/basic-llvm-cmd/actions/workflows/raw-build.yml)
+[![Docker Build](https://github.com/refactormyself/basic-llvm-cmd/actions/workflows/docker-build.yml/badge.svg)](https://github.com/refactormyself/basic-llvm-cmd/actions/workflows/docker-build.yml)
+
 ### A basic command line project based on [LLVM's Command Line]() tool
 
 This is the first in a series of small minimal demo of llvm internal tools that are aimed at internal use.
