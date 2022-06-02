@@ -58,11 +58,12 @@ namespace cmd {
 
     // ref: https://en.cppreference.com/w/cpp/filesystem/directory_entry/last_write_time
     std::string to_string(std::filesystem::file_time_type const &ftime) {
-        std::time_t cftime = std::chrono::system_clock::to_time_t(ftime);
-//                std::chrono::file_clock::to_sys(ftime));
-        std::string str = std::asctime(std::localtime(&cftime));
-        str.pop_back();  // rm the trailing '\n' put by `asctime`
-        return str;
+//        std::time_t cftime = std::chrono::system_clock::to_time_t(ftime);
+//               // std::chrono::file_clock::to_sys(ftime));
+//        std::string str = std::asctime(std::localtime(&cftime));
+//        str.pop_back();  // rm the trailing '\n' put by `asctime`
+//        return str;
+        return ""; // TODO: there is a wierd bug here ^^^^
     }
 
     void CreateReportFile(const std::vector<FileInfo> &files, const string &outFilename) {

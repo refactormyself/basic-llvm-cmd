@@ -7,7 +7,8 @@ if [ "" == "$1" ]; then
 fi
 
 HERE=$PWD
-rm -rf build
+
+rm -rf "$HERE"/build || echo "rm failed for $HERE/build"
 mkdir build
 cd build || exit
 
