@@ -1,0 +1,11 @@
+name: Docker Build
+on: push
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run the docker_run.sh script (Builds and runs the Image)
+        run: sh ./docker-run.sh
+        shell: bash
